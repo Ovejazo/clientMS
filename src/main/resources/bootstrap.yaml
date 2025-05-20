@@ -1,6 +1,6 @@
 spring:
   application:
-    name: feeMS
+    name: clientMS
   cloud:
     config:
       enabled: true
