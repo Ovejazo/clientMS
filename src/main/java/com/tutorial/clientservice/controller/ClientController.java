@@ -27,6 +27,12 @@ public class ClientController {
         return ResponseEntity.ok(clients);
     }
 
+    @GetMapping("/rut/{rut}")
+    public ResponseEntity<ClientEntity> getClientbyRut(@PathVariable String rut) {
+        ClientEntity clients = clientService.getClientByRut(rut);
+        return ResponseEntity.ok(clients);
+    }
+
     @PostMapping("/")
     public ResponseEntity<ClientEntity> saveClient(@RequestBody ClientEntity client) {
         ClientEntity clientsNew = clientService.saveClient(client);
@@ -39,13 +45,6 @@ public class ClientController {
         return ResponseEntity.ok(clientUpdate);
     }
 
-    /*
-        @GetMapping("/{id}")
-        public ResponseEntity<ClientEntity> getClientbyId(@PathVariable Long id) {
-            ClientEntity clients = clientService.getClientById(id);
-            return ResponseEntity.ok(clients);
-        }
-    */
     @DeleteMapping("/{id}")
     public ResponseEntity<Boolean> deleteClientById(@PathVariable Long id) throws Exception {
         var isDeleted = clientService.deleteClient(id);

@@ -62,4 +62,8 @@ public class ClientService {
         }
 
     }
+
+    public ClientEntity getClientByRut(String rut) {
+        return clientRepository.findByRut(rut);
+    }
 }
