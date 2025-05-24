@@ -6,7 +6,7 @@ spring:
       enabled: true
       uri: http://config-server-service:8081
   datasource:
-    url: jdbc:postgresql://db-bdclient-service:5433/bdclient
+    url: jdbc:postgresql://bdclient-service:5433/bdclient
     username: postgres
     password: 1234
     driver-class-name: org.postgresql.Driver
