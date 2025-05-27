@@ -4,9 +4,9 @@ spring:
   cloud:
     config:
       enabled: true
-      uri: http://config-server-service:8081
+      uri: http://localhost:8081
   datasource:
-    url: jdbc:postgresql://bdclient-service:5433/bdclient
+    url: jdbc:postgresql://localhost:5432/bdclient
     username: postgres
     password: 1234
     driver-class-name: org.postgresql.Driver
