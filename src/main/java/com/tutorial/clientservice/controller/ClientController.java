@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -29,6 +30,13 @@ public class ClientController {
     @GetMapping("/rut/{rut}")
     public ResponseEntity<ClientEntity> getClientbyRut(@PathVariable String rut) {
         ClientEntity clients = clientService.getClientByRut(rut);
+        return ResponseEntity.ok(clients);
+    }
+
+    @GetMapping("/ruts/{ruts}")
+    public ResponseEntity<List<ClientEntity>> getClientsbyRut(@PathVariable String ruts) {
+        List<String> rutList = Arrays.asList(ruts.split(","));
+        <List<ClientEntity>> clients = clientService.getClientsByRut(rutList);
         return ResponseEntity.ok(clients);
     }
 

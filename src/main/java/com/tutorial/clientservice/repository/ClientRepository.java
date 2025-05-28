@@ -15,5 +15,10 @@ public interface ClientRepository extends JpaRepository<ClientEntity, Long> {
 
     @Query(value = "SELECT * FROM client WHERE client.rut = :rut", nativeQuery = true)
     ClientEntity findByRutNativeQuery(@Param("rut") String rut);
+
+    @Query(value = "SELECT * FROM client WHERE client.rut IN :ruts", nativeQuery = true)
+    List<ClientEntity> findByRutsNativeQuery(@Param("ruts") List<String> ruts);
+
+
 }
 

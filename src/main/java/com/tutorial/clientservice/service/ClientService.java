@@ -66,4 +66,8 @@ public class ClientService {
     public ClientEntity getClientByRut(String rut) {
         return clientRepository.findByRut(rut);
     }
-}
+
+    public <List<ClientEntity>> getClientsByRut(String ruts) {
+        return clientRepository.findByRuts(ruts);
+    }
+}getClientsByRut
