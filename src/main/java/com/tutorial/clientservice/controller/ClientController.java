@@ -36,7 +36,7 @@ public class ClientController {
     @GetMapping("/ruts/{ruts}")
     public ResponseEntity<List<ClientEntity>> getClientsbyRut(@PathVariable String ruts) {
         List<String> rutList = Arrays.asList(ruts.split(","));
-        <List<ClientEntity>> clients = clientService.getClientsByRut(rutList);
+        List<ClientEntity> clients = clientService.getClientsByRut(rutList);
         return ResponseEntity.ok(clients);
     }
 

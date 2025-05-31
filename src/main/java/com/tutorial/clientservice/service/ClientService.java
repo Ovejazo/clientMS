@@ -10,6 +10,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class ClientService {
@@ -67,7 +68,8 @@ public class ClientService {
         return clientRepository.findByRut(rut);
     }
 
-    public <List<ClientEntity>> getClientsByRut(String ruts) {
+    public List<ClientEntity> getClientsByRut(List<String> ruts)
+    {
         return clientRepository.findByRuts(ruts);
     }
-}getClientsByRut
+}
